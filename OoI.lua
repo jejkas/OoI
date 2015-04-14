@@ -14,10 +14,7 @@ SLASH_OoI1 = "/OoI";
 SlashCmdList["OoI"] = function(args)
 	if args == nil or args == ""
 	then
-		if OoI_Settings["UseOil"]
-		then
-			OoI_RecastBuff();
-		end
+		OoI_("/ooi use|toggle|lock");
 	else
 		if args == "toggle"
 		then
@@ -28,8 +25,13 @@ SlashCmdList["OoI"] = function(args)
 			else
 				OoI_("DISABLED")
 			end;
-		end;
-		if args == "lock"
+		elseif args == "use"
+		then
+			if OoI_Settings["UseOil"]
+			then
+				OoI_RecastBuff();
+			end
+		elseif args == "lock"
 		then
 			OoI_Settings["FrameLock"] = not OoI_Settings["FrameLock"];
 			if OoI_Settings["FrameLock"]
