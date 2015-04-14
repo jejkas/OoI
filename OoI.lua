@@ -272,7 +272,7 @@ function OoI_MakeFrame()
 	f.texture:SetAllPoints(f)
 	]]
 	
-	local button = CreateFrame("CheckButton", "OoI_Frame_Checkbox", f, "UICheckButtonTemplate")
+	local button = CreateFrame("CheckButton", "OoI_Frame_Checkbox", UIParent, "UICheckButtonTemplate")
 	button:ClearAllPoints()
 	button:SetPoint(OoI_Settings["frameRelativePos"], OoI_Settings["frameXPos"], OoI_Settings["frameYPos"])
 	--button:SetPoint("CENTER", 0, 0)
