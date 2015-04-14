@@ -1,0 +1,54 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+	..\FrameXML\UI.xsd">
+	<GameTooltip name="OoI_tooltip" frameStrata="TOOLTIP" hidden="true" inherits="GameTooltipTemplate">
+		<Scripts>
+			<OnLoad>
+				this:SetOwner(UIParent,"ANCHOR_NONE")
+			</OnLoad>
+		</Scripts> 
+	</GameTooltip>
+	<CheckButton name="OoICheckboxTemplate" hidden="false" virtual="true">
+		<Size>
+			<AbsDimension x="32" y="32"/>
+		</Size>
+		<Layers>
+			<Layer level="ARTWORK">
+				<FontString name="$parentText" inherits="GameFontNormalSmall" text="">
+					<Anchors>
+						<Anchor point="LEFT" relativePoint="RIGHT">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<NormalTexture file="Interface\Buttons\UI-CheckBox-Up"/>
+		<PushedTexture file="Interface\Buttons\UI-CheckBox-Down"/>
+		<HighlightTexture file="Interface\Buttons\UI-CheckBox-Highlight" alphaMode="ADD"/>
+		<CheckedTexture file="Interface\Buttons\UI-CheckBox-Check"/>
+		<DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled"/>
+	</CheckButton>
+	
+	
+	<Frames>
+		<CheckButton name="OoICheckbox" inherits="OoICheckboxTemplate">
+			<Anchors>
+				<Anchor point="TOPLEFT" relativeTo="OoI_Frame">
+					<Offset>
+						<AbsDimension x="20" y="-20" />						
+					</Offset>
+				</Anchor>
+			</Anchors>
+			<Scripts>
+				<OnShow>
+					OoI_UI_GetOption();
+				</OnShow>
+				<OnClick>
+					OoI_UI_Toggle("UseOil");
+				</OnClick>
+			</Scripts>
+		</CheckButton>
+	</Frames>
+</Ui>

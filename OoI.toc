@@ -1,0 +1,8 @@
+## Interface: 11200
+## Title: OoI
+## Notes: OoI
+## Author: rexas - rexas.net/wow
+## Version: 1.0
+## SavedVariablesPerCharacter: OoI_Settings
+OoI.lua
+OoI_Tooltip.xml
